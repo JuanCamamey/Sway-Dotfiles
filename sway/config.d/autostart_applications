@@ -1,0 +1,39 @@
+# Auth with polkit-gnome:
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Update dbus environments with display variables
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+
+# Idle configuration
+exec_always --no-startup-id swayidle -w \
+  timeout 300 'swaylock' \
+  timeout 420 'loginctl suspend' \
+  after-resume 'swaymsg "output * dpms on"' \
+  before-sleep 'swaylock' \
+  lock 'swaylock'
+
+# Desktop notifications
+exec mako
+
+# Start foot server
+exec_always --no-startup-id foot --server
+
+# Autotiling
+exec autotiling
+
+# cliphist
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+     
+# Network Applet
+exec nm-applet --indicator
+
+# Firewall Applet
+exec sleep 2 && firewall-applet
+
+# Waybar
+exec_always --no-startup-id sleep 1 && waybar
+
+# Automounting
+exec udiskie --tray --notify
