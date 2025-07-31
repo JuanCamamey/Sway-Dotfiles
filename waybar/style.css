@@ -1,180 +1,88 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
-
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
-@define-color highlight #685878 ;
-@define-color base1  #19191e ;
-
-@keyframes blink-warning {
-    70% {
-        color: white;
-    }
-
-    to {
-        color: white;
-        background-color: orange;
-    }
-}
-
-@keyframes blink-critical {
-    70% {
-      color: white;
-    }
-
-    to {
-        color: white;
-        background-color: red;
-    }
-}
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
     min-height: 0;
-    margin: 1px;
+    font-family: "DepartureMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
     padding: 0;
 }
 
-/* The whole bar */
-#waybar {
-    background: transparent;
-    color: #e3e3ea;
-    background-color: @base1;
-    font-family: JetBrainsMono;
-    font-size: 13px;
+window#waybar {
+    background: #1d1d1d;
+    border-bottom: 2px solid #4b4239;
 }
 
-/* Every modules */
-#mode,
-#network,
-#idle_inhibitor,
+tooltip {
+    background-color: #101010;
+    border: 2px solid #766451;
+}
+
+#clock,
+#tray,
 #cpu,
 #memory,
 #backlight,
-#pulseaudio,
 #battery,
-#clock,
-#tray {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+#network,
+#pulseaudio {
+    margin: 6px 6px 6px 0px;
+    padding: 6px 10px;
 }
 
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
-
 #workspaces {
-    font-size:13px;
+    border-radius: 8px;
+    background-color: #322d28;
+    margin: 6px 0px 6px 6px;
+    border: 2px solid #625343;
 }
 
 #workspaces button {
-    border-radius: 5px;
-    color: #eceff4;
-    padding: 1px 6px;
-    margin-right: 2px;
-    margin-left: 2px;
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 4px 6px;
+    color: #7a7367;
 }
 
 #workspaces button.focused {
-    border: 1px solid #d8dee9;
+    color: #ddc7a1;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    background-color: #e78a4e;
+    color: #1d2021;
 }
 
-#mode {
-    background: @highlight;
-    border-bottom: 3px transparent;
-    color:white;
-    margin-left: 5px;
-    padding: 7px;
+#clock {
+    border-radius: 8px;
+    background-color: #322d28;
+    border: 2px solid #625343;
+    color: #d4be98;
 }
 
-#window {
-    font-weight: bold;
-}
-
-#network.disconnected {
-    color: orange;
-}
-
-#cpu.warning {
-    color: orange;
-}
-
-#cpu.critical {
-    color: red;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: orange;
- }
-
-#memory.critical {
-    color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
-}
-
-#backlight.icon {
-}
-
+#tray,
+#cpu,
+#memory,
+#network,
+#battery,
+#backlight,
 #pulseaudio {
+    border-radius: 8px;
+    background-color: #322d28;
+    border: 2px solid #625343;
+    color: #d4be98;
 }
 
-#pulseaudio.muted {
-    color: @highlight;
-}
-
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.warning {
-    color: orange;
+#cpu.critical,
+#memory.critical {
+    background-color: #c9af82;
+    border: 2px solid #917a53;
+    color: #da4343;
 }
 
 #battery.critical {
-    color: red;
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#custom-power {
-    margin-left:15px;
-    margin-right:15px;
-    font-size:15px;
+    background-color: #c9af82;
+    border: 2px solid #917a53;
+    color: #da4343;
 }
