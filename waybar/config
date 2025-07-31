@@ -53,7 +53,7 @@
 
     "backlight": {
         "format": " {percent}%",
-        "onclick": "brightnessctl"
+        "on-click": "brightnessctl"
     },
 
     "tray": {
@@ -62,7 +62,7 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p}"
+        "format": "{:%I:%M %p}",
         "tooltip": false
     },
 
