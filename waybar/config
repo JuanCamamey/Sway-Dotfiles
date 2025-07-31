@@ -47,11 +47,13 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-icons": ["","",""],
-        "format-muted": " {volume}%"
+        "format-muted": " {volume}%",
+        "on-click": "pavucontrol"
     },
 
     "backlight": {
-        "format": " {percent}%"
+        "format": " {percent}%",
+        "onclick": "brightnessctl"
     },
 
     "tray": {
