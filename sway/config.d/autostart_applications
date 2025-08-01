@@ -27,10 +27,10 @@ exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
      
 # Network Applet
-exec nm-applet --indicator
+#exec nm-applet --indicator
 
 # Firewall Applet
-exec sleep 2 && firewall-applet
+#exec sleep 2 && firewall-applet
 
 # Waybar
 exec_always --no-startup-id sleep 1 && waybar

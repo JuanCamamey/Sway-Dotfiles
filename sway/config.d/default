@@ -33,7 +33,7 @@ set $launcher fuzzel
     bindsym $mod+Shift+d exec $menu
 
     # Lock screen
-    bindsym $mod+f1 exec gtklock
+    bindsym $mod+f1 exec swaylock
 
     # Activities
     bindsym $mod+p exec ~/.config/sway/scripts/window_switcher.sh
@@ -76,10 +76,6 @@ set $launcher fuzzel
 #
 # Workspaces:
 #
-    # Workspace bindings are using bindcode instead of bindsym for better Azerty compatibility.
-    # https://github.com/EndeavourOS-Community-Editions/sway/pull/81
-    # Use wev to find keycodes for setting up other bindings this way.
-
     bindcode {
         # Switch to workspace
         $mod+10 workspace number 1

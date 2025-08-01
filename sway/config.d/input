@@ -12,6 +12,7 @@ input type:touchpad {
 # Keyboard configuration
 input type:keyboard {
     xkb_numlock enabled
+    xkb_model "pc104"
     xkb_layout "latam"
 }
 
