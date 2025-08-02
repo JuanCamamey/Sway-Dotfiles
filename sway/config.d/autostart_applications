@@ -1,5 +1,5 @@
-# Auth with polkit-gnome:
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# Auth with xfce-polkit:
+exec /usr/lib/xfce-polkit/xfce-polkit-authentication-agent-1
 
 # Update dbus environments with display variables
 exec hash dbus-update-activation-environment 2>/dev/null && \
