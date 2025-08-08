@@ -7,11 +7,11 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 
 # Idle configuration
 exec_always --no-startup-id swayidle -w \
-  timeout 300 'swaylock' \
+  timeout 300 'gtklock' \
   timeout 420 'loginctl suspend' \
   after-resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock' \
-  lock 'swaylock'
+  before-sleep 'gtklock' \
+  lock 'gtklock'
 
 # Desktop notifications
 exec mako
