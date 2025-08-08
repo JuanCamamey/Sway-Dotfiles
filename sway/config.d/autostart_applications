@@ -9,15 +9,11 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 exec_always --no-startup-id swayidle -w \
   timeout 300 'gtklock' \
   timeout 420 'loginctl suspend' \
-  after-resume 'swaymsg "output * dpms on"' \
-  before-sleep 'gtklock' \
-  lock 'gtklock'
+  resume 'swaymsg "output * dpms on"' \
+  before-sleep 'gtklock'
 
 # Desktop notifications
 exec mako
-
-# Start foot server
-exec_always --no-startup-id foot --server
 
 # Autotiling
 exec autotiling

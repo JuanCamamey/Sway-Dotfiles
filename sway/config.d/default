@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 # Set default terminal emulator
-set $term foot
+set $term kitty
 
 # Application launcher
 set $launcher fuzzel
@@ -33,7 +33,7 @@ set $launcher fuzzel
     bindsym $mod+Shift+d exec $menu
 
     # Lock screen
-    bindsym $mod+f1 exec swaylock
+    bindsym $mod+f1 exec gtklock
 
     # Activities
     bindsym $mod+p exec ~/.config/sway/scripts/window_switcher.sh
@@ -192,7 +192,7 @@ set $launcher fuzzel
 # App shortcuts
 #
     # Launch the file explorer
-    bindsym $mod+n exec thunar
+    bindsym $mod+n exec $term -e ranger
 
     # Launch the browser
     bindsym $mod+o exec firefox
