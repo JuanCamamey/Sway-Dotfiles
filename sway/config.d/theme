@@ -1,6 +1,6 @@
 # Set inner/outer gaps
 gaps inner 5
-gaps outer 2
+gaps outer 5
 
 # Hide titlebar on windows:
 default_border pixel 1
@@ -15,10 +15,10 @@ smart_borders on
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"
 for_window [shell="x_wayland"] title_format "%class - %title"
 
-# class                 border    bground   text      indicator  child_border
-client.focused          #625343   #322d28   #d4be98   #625343    #625343
-client.focused_inactive #322d28   #1d1d1d   #7a7367   #322d28    #322d28
-client.unfocused        #1d1d1d   #1d1d1d   #7a7367   #1d1d1d    #1d1d1d
-client.urgent           #625343   #c9af82   #1d1d1d   #da4343    #da4343
-client.placeholder      #1d1d1d   #1d1d1d   #7a7367   #1d1d1d    #1d1d1d
-client.background       #1d1d1d
+# class                 border     background text      indicator  child_border
+client.focused          #5a5a5a    #1a1a1d    #d6d6d6   #5a5a5a    #5a5a5a
+client.focused_inactive #2d2d2d    #1a1a1d    #999999   #2d2d2d    #2d2d2d
+client.unfocused        #1a1a1d    #1a1a1d    #777777   #1a1a1d    #1a1a1d
+client.urgent           #b03a48    #c94f5c    #ffffff   #b03a48    #b03a48
+client.placeholder      #1a1a1d    #1a1a1d    #777777   #1a1a1d    #1a1a1d
+client.background       #1a1a1d
